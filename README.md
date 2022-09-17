@@ -45,3 +45,7 @@ abstract class BaseExtension {
 }
 
 ```
+
+## Khởi nguồn
+
+Ứng dụng dựa trên ý tưởng của [Tachiyomi](https://github.com/tachiyomiorg/tachiyomi) và [Tachiyomi-extensions](https://github.com/tachiyomiorg/tachiyomi-extensions)
