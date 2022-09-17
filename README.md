@@ -1,6 +1,6 @@
 ﻿# AnyTV-extensions
 
-Phần mở rộng cho ứng dụng AnyTV cho phép tích hợp nội dung của các web xem phim vào 1 ứng dụng duy nhất.
+Phần mở rộng cho ứng dụng [AnyTV](https://github.com/hajaulee/AnyTV) cho phép tích hợp nội dung của các web xem phim vào 1 ứng dụng duy nhất.
 
 ## Vị trí module
 
