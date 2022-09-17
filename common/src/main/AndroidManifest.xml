@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hajaulee.anytv.extension.common">
+
+    <application android:allowBackup="false" android:label="${appName}">
+        <meta-data android:name="anytv.extension.class" android:value="${extClass}" />
+
+    </application>
+</manifest>

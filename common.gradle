@@ -1,0 +1,37 @@
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationIdSuffix pkgNameSuffix
+        minSdk 21
+        targetSdk 32
+        versionCode extVersionCode
+        versionName "1.0." + "$extVersionCode"
+        setProperty("archivesBaseName", "anytv-extensions-$pkgNameSuffix-v$versionName")
+
+        manifestPlaceholders = [
+            appName : "AnyTV: $extName",
+            extClass: extClass,
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(project(":common"))
+    implementation 'org.jsoup:jsoup:1.13.1'
+}

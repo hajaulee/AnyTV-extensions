@@ -1,0 +1,13 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+ext {
+    extName = 'Animet'
+    pkgNameSuffix = 'vi.animet'
+    extClass = '.Animet'
+    extVersionCode = 1
+}
+
+apply from: "$rootDir/common.gradle"

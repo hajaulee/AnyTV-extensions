@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "AnyTvExtensions"
+
+new File(rootDir, "extensions").eachDir { dir ->
+    dir.eachDir { subdir ->
+        String name = ":${dir.name}-${subdir.name}"
+        include name
+        project(name).projectDir = new File("extensions/${dir.name}/${subdir.name}")
+    }
+}
+include ':common'
