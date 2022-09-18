@@ -1,3 +1,4 @@
+import java.nio.file.Files
 
 android {
     compileSdk 32
@@ -42,6 +43,32 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+
+    task extInfo()  {
+        doLast {
+            new File("$projectDir/release", "extension-info.json").text = """
+{
+    "name": "AnyTV: $extName",
+    "package": "com.hajaulee.anytv.extension.$pkgNameSuffix",
+    "version": "1.0.$extVersionCode",
+    "file": "${rootDir.toPath().relativize(projectDir.toPath()).toString().replace("\\", "/")}/release/anytv-extensions-$pkgNameSuffix-v1.0.${extVersionCode}-release.apk"
+}
+""".trim()
+
+            List<String> extsInfo = new ArrayList<>()
+            new File(rootDir, "extensions").eachDir { dir ->
+                dir.eachDir { subdir ->
+                    extsInfo.add(new File("extensions/${dir.name}/${subdir.name}/release/extension-info.json").text)
+                }
+            }
+            new File(rootDir, "extensions.json").text = "[" + String.join(",\n", extsInfo) + "]"
+        }
+    }
+
+    afterEvaluate {
+        packageRelease.finalizedBy(extInfo)
     }
 }
 
