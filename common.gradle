@@ -19,14 +19,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources = true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled false
         }
-    }
-
-    dependenciesInfo {
-        includeInApk = false
     }
 
     buildFeatures {
@@ -73,6 +67,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
-    implementation 'org.jsoup:jsoup:1.13.1'
+    compileOnly project(":common")
+    compileOnly 'org.jsoup:jsoup:1.13.1'
 }
