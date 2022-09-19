@@ -93,13 +93,4 @@ open class Animet : BaseExtension() {
         return "video"
     }
     override fun moviePlayerContainerSelector(): String = "#media-player iframe"
-
-    override fun onMoviePageLoadedJavascript(): String {
-        return """
-            // Video element ready to play
-            setTimeout(() => {
-                Android.ready();
-            }, 2000);
-            """.trimMargin()
-    }
 }

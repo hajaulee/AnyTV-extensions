@@ -34,7 +34,7 @@ abstract class BaseExtension {
 
     open fun moviePlayerSelector(): String = "video"
     open fun moviePlayerContainerSelector(): String = moviePlayerSelector()
-    open fun onMoviePageLoadedJavascript(): String = "Android.ready()"
+    open fun onMoviePageLoadedJavascript(): String = ""
 
     protected fun addBaseUrl(base: String, path: String): String {
         var newPath = path
