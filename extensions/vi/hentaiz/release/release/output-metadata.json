@@ -4,16 +4,16 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.hajaulee.anytv.extension.vi.animet",
+  "applicationId": "com.hajaulee.anytv.extension.vi.hentaiz",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 7,
-      "versionName": "1.0.7",
-      "outputFile": "anytv-extensions-vi.animet-v1.0.7-release.apk"
+      "versionCode": 2,
+      "versionName": "1.0.2",
+      "outputFile": "anytv-extensions-vi.hentaiz-v1.0.2-release.apk"
     }
   ],
   "elementType": "File"

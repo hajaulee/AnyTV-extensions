@@ -13,7 +13,7 @@ class HentaiZ : BaseExtension() {
     override val thumbnailRatio = 0.69
     override val userAgent = "Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.136 Mobile Safari/537.36"
 
-    override fun latestMovieRequest(page: Int): String {
+    override fun latestMovieUrl(page: Int): String {
         return "$baseUrl/hentai-vietsub/page/$page/"
     }
 
@@ -37,13 +37,13 @@ class HentaiZ : BaseExtension() {
         )
     }
 
-    override fun popularMovieRequest(page: Int): String {
+    override fun popularMovieUrl(page: Int): String {
         return "$baseUrl/page/$page/?s&sort=meta_value_num%3Adesc%3Ax_post_views_count"
     }
     override fun popularMovieSelector() = latestMovieSelector()
     override fun popularMovieFromElement(e: Element) = latestMovieFromElement(e)
 
-    override fun searchMovieRequest(keyword: String, page: Int): String {
+    override fun searchMovieUrl(keyword: String, page: Int): String {
         return "$baseUrl/?sort=&s=$keyword"
     }
     override fun searchMovieSelector() = latestMovieSelector()
@@ -59,7 +59,7 @@ class HentaiZ : BaseExtension() {
 
     }
 
-    override fun relatedMovieParse(doc: Document): List<Movie> {
+    override fun relatedMoviesParse(doc: Document): List<Movie> {
         return doc.select(latestMovieSelector()).map { latestMovieFromElement(it) }
     }
 

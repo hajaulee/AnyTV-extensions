@@ -5,7 +5,7 @@ ext {
     extName = 'HentaiZ'
     pkgNameSuffix = 'vi.hentaiz'
     extClass = '.HentaiZ'
-    extVersionCode = 1
+    extVersionCode = 2
     extNsfw = true
 }
 

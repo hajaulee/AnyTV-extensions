@@ -12,14 +12,14 @@ open class Animet : BaseExtension() {
     override val thumbnailRatio= 0.75
 
 
-    override fun popularMovieRequest(page: Int): String {
+    override fun popularMovieUrl(page: Int): String {
         return "$viewSource$baseUrl/bang-xep-hang/month.html"
     }
 
     override fun popularMovieSelector(): String = "li.group"
 
     override fun popularMovieFromElement(e: Element): Movie {
-        val movieUrl = addBaseUrl(baseUrl, e.selectFirst("a").attr("href"))
+        val movieUrl = e.selectFirst("a").attr("abs:href")
         val title = e.selectFirst(".title-item").text()
         val episode = e.selectFirst(".mli-eps")?.text()
         return Movie.buildMovieInfo(
@@ -32,7 +32,7 @@ open class Animet : BaseExtension() {
             e.selectFirst("img").attr("src")) // Card image;
     }
 
-    override fun latestMovieRequest(page: Int): String {
+    override fun latestMovieUrl(page: Int): String {
         return "$viewSource$baseUrl/danh-sach/phim-bo/trang-$page.html"
     }
 
@@ -40,7 +40,7 @@ open class Animet : BaseExtension() {
 
 
     override fun latestMovieFromElement(e: Element): Movie {
-        val movieUrl = addBaseUrl(baseUrl, e.selectFirst("a").attr("href"))
+        val movieUrl =  e.selectFirst("a").attr("abs:href")
         val title = e.selectFirst(".Title").text()
         val description = e.selectFirst(".Description p")?.text() ?: ""
         val genres = e.select(".Genre a").joinToString(", ") { it.text() }
@@ -55,7 +55,7 @@ open class Animet : BaseExtension() {
             e.selectFirst("img").attr("src")) // Card image;
     }
 
-    override fun searchMovieRequest(keyword: String, page: Int): String {
+    override fun searchMovieUrl(keyword: String, page: Int): String {
         return "$baseUrl/tim-kiem/$keyword/trang-$page.html"
     }
 
@@ -71,7 +71,7 @@ open class Animet : BaseExtension() {
         return movie
     }
 
-    override fun relatedMovieParse(doc: Document): List<Movie> {
+    override fun relatedMoviesParse(doc: Document): List<Movie> {
         val elements = doc.select(".MovieListRelated .TPostMv")
         val movies = elements.map { e ->
             latestMovieFromElement(e)

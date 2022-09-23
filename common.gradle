@@ -41,8 +41,8 @@ android {
 
     task extInfo()  {
         doLast {
-            new File("$projectDir/release").mkdirs()
-            new File("$projectDir/release", "extension-info.json").text = """
+            new File("$projectDir/release-info").mkdirs()
+            new File("$projectDir/release-info", "extension-info.json").text = """
 {
     "name": "AnyTV: $extName",
     "package": "com.hajaulee.anytv.extension.$pkgNameSuffix",
@@ -54,7 +54,7 @@ android {
             List<String> extsInfo = new ArrayList<>()
             new File(rootDir, "extensions").eachDir { dir ->
                 dir.eachDir { subdir ->
-                    File file = new File("extensions/${dir.name}/${subdir.name}/release/extension-info.json")
+                    File file = new File("extensions/${dir.name}/${subdir.name}/release-info/extension-info.json")
                     if (file.exists()) {
                         extsInfo.add(file.text)
                     }
