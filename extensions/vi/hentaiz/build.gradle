@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'HentaiZ'
+    pkgNameSuffix = 'vi.hentaiz'
+    extClass = '.HentaiZ'
+    extVersionCode = 1
+    extNsfw = true
+}
+
+apply from: "$rootDir/common.gradle"

@@ -5,6 +5,7 @@
 
     <application android:allowBackup="false" android:label="${appName}">
         <meta-data android:name="anytv.extension.class" android:value="${extClass}" />
+        <meta-data android:name="nsfw" android:value="${extNsfw}" />
 
     </application>
 </manifest>

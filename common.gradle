@@ -12,6 +12,7 @@ android {
         manifestPlaceholders = [
             appName : "AnyTV: $extName",
             extClass: extClass,
+            extNsfw: extNsfw
         ]
     }
 
@@ -40,6 +41,7 @@ android {
 
     task extInfo()  {
         doLast {
+            new File("$projectDir/release").mkdirs()
             new File("$projectDir/release", "extension-info.json").text = """
 {
     "name": "AnyTV: $extName",
@@ -52,7 +54,10 @@ android {
             List<String> extsInfo = new ArrayList<>()
             new File(rootDir, "extensions").eachDir { dir ->
                 dir.eachDir { subdir ->
-                    extsInfo.add(new File("extensions/${dir.name}/${subdir.name}/release/extension-info.json").text)
+                    File file = new File("extensions/${dir.name}/${subdir.name}/release/extension-info.json")
+                    if (file.exists()) {
+                        extsInfo.add(file.text)
+                    }
                 }
             }
             new File(rootDir, "extensions.json").text = "[" + String.join(",\n", extsInfo) + "]"

@@ -89,8 +89,5 @@ open class Animet : BaseExtension() {
         return Episode(e.text(), e.attr("href"))
     }
 
-    override fun moviePlayerSelector(): String {
-        return "video"
-    }
     override fun moviePlayerContainerSelector(): String = "#media-player iframe"
 }

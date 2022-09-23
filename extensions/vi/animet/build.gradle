@@ -5,7 +5,8 @@ ext {
     extName = 'Animet'
     pkgNameSuffix = 'vi.animet'
     extClass = '.Animet'
-    extVersionCode = 5
+    extVersionCode = 6
+    extNsfw = false
 }
 
 apply from: "$rootDir/common.gradle"
