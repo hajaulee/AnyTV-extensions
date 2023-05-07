@@ -5,7 +5,7 @@ ext {
     extName = 'Animet'
     pkgNameSuffix = 'vi.animet'
     extClass = '.Animet'
-    extVersionCode = 7
+    extVersionCode = 8
     extNsfw = false
 }
 

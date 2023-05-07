@@ -8,7 +8,7 @@ import org.jsoup.nodes.Element
 
 open class Animet : BaseExtension() {
     override val name = "Animet"
-    override val baseUrl = "https://animet.net"
+    override val baseUrl = "https://anime24h.org"
     override val thumbnailRatio= 0.75
 
 
