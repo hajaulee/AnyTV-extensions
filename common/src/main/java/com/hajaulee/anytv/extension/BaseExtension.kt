@@ -10,6 +10,8 @@ abstract class BaseExtension {
     open val baseUrl = "https://something.com"
     open val thumbnailRatio = 1.5
     open val userAgent: String? = null
+    open val allowShortMovie = false
+    open val customCss = ""
 
     abstract fun latestMovieUrl(page: Int): String
     open fun latestMoviesParse(doc: Document): List<Movie>? = null

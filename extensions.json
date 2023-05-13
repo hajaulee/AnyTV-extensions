@@ -9,4 +9,10 @@
     "package": "com.hajaulee.anytv.extension.vi.hentaiz",
     "version": "1.0.2",
     "file": "extensions/vi/hentaiz/release/anytv-extensions-vi.hentaiz-v1.0.2-release.apk"
+},
+{
+    "name": "AnyTV: Phimmoi",
+    "package": "com.hajaulee.anytv.extension.vi.phimmoi",
+    "version": "1.0.2",
+    "file": "extensions/vi/phimmoi/release/anytv-extensions-vi.phimmoi-v1.0.2-release.apk"
 }]

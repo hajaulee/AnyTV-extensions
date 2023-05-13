@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'Phimmoi'
+    pkgNameSuffix = 'vi.phimmoi'
+    extClass = '.Phimmoi'
+    extVersionCode = 2
+    extNsfw = true
+}
+
+apply from: "$rootDir/common.gradle"
