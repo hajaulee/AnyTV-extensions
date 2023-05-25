@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 ext {
-    extName = 'Phimmoi'
-    pkgNameSuffix = 'vi.phimmoi'
-    extClass = '.Phimmoi'
-    extVersionCode = 3
+    extName = 'TvHay'
+    pkgNameSuffix = 'vi.tvhay'
+    extClass = '.TvHay'
+    extVersionCode = 1
     extNsfw = false
 }
 

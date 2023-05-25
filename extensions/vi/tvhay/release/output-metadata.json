@@ -4,16 +4,16 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.hajaulee.anytv.extension.vi.phimmoi",
+  "applicationId": "com.hajaulee.anytv.extension.vi.tvhay",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 3,
-      "versionName": "1.0.3",
-      "outputFile": "anytv-extensions-vi.phimmoi-v1.0.3-release.apk"
+      "versionCode": 1,
+      "versionName": "1.0.1",
+      "outputFile": "anytv-extensions-vi.tvhay-v1.0.1-release.apk"
     }
   ],
   "elementType": "File"
